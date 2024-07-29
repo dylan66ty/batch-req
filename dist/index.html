@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script src="./index.js"></script>
+
+  <script>
+
+    const { BatchReq } = BR
+
+
+    const br = new BatchReq({
+       async request(chunks){
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve(chunks.reduce((a,b) => a+b))
+          }, 3000);
+        })
+      },
+      subscribe(res) {
+        console.log(res);
+      }
+    })
+    for(let i = 0; i < 690; i++) {
+      setTimeout(() => {
+        br.add(i)
+      }, i);
+    }
+
+    console.log(br);
+
+
+  </script>
+  
+</body>
+</html>

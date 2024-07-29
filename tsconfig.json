@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./dist/types", 
+    "emitDeclarationOnly": true,
+    "rootDir": "./src",
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": [
+      "ESNext",
+      "DOM",
+    ],
+    "allowJs": true,
+    "removeComments": true,
+    "strict": true,
+    "noImplicitAny": false, 
+    "strictNullChecks": false,
+    "noUnusedLocals": true,
+    "moduleResolution": "node", 
+    "baseUrl": ".", 
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
+  },
+  "types": [],
+  "include": [
+    "src/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
